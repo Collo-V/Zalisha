@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=""name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="Images/zalishaIcon.jpg">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">   
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.7/css/all.css">   
+
+        <style>
+            *{font-family:Verdana ;box-sizing: border-box;}
+            .left{float: left;}.right{float: right;}
+            .nav{box-sizing: border-box; height:60px;width:100%;box-shadow: 2px 2px #fff;color: #ffffff;} .nav span,.mobnav span{padding: 10px;} .nav .nspan{margin-top: 15px;float: left;}
+            .nav img,.mobnav img{width: 40px;height: auto;float: left;margin-top: 4px;}
+            .nav a{color:#fff;text-decoration: none;font-size: 18px;display:block;padding: 19px;float:left}
+            .mobnav{ display: none;height: 45px;width: 100%;text-align: center;padding-top: 8px;color: #ffffff;font-size: 18px;}.mobnav i{color: #111;} .mobnav div{float:right;background-color: #ffffff;}
+            .menu{float:right;margin-right: 10px;padding: 6px;margin-bottom: 0px;}.dropdown{margin-right: 5px; width: 200px; height:300px;padding: 10px;text-align: center; float: inline-start;font-size:15px;display: none;position:absolute;right:0px;top:50.5px;z-index: 1;}.dropdown i{float: left;margin-left: 8px;}.dropdown a{float:inline-start;display: block;padding: 10px;text-decoration: none;color: #000000;}
+            .menu:hover .dropdown,.dropdown:hover.dropdown{display: block;}.dropdown a:hover{background-color: #c4bbbb;}
+            .list{float: right;}.right{margin-right: 12px;}
+            .list a{display:block;background-color:#79d379f8 ;font-family: sans-serif;font-size: 15px;padding: 20px;}
+            .list :hover{background-color: #3bc53bf8;}
+            body{background-color: #f1efef;}
+            .content{position: absolute;top:120px;height: 100%;}
+            .body{position: relative;left: 55px;width:90%}
+            .bec{height: fit-content; box-sizing: border-box; width:45%;background-color: #ffffff;padding: 12px 20px 40px 20px;font-size: 20px;font-family:verdana;margin-top: 30px;}
+            /* .bec{font-size: 28px;} */
+            .join{color:#18a7e0;font-size: 50px;font-weight: normal;} 
+            button{color:#ffffff;text-align: center;height: fit-content;width:fit-content;padding: 8px;border-radius: 10px;border: none;}                   
+            .slide{position: absolute;left:60%;top:0px;width: min-content;}
+            .slide img{max-height: 400px;width: auto;max-width: 250px;}
+            .anim{position: relative;
+                animation-name: Anim;
+                animation-duration: 2.5s;
+            }
+              @keyframes Anim {
+                  0%{position: relative; left: 10%;}
+                  33%{position: relative; left:20%}
+                  66%{position: relative; left:20%}
+                  100%{position: relative; left: 30%;}
+                  
+              }  
+            .enb{font-size:30px ;text-align: center;font-family: verdana;margin: 0 auto;width: 70%;}
+            .enb h1{font-size: 32px;font-weight: normal;color:#18a7e0}
+            .dwn{width: fit-content;text-align: center;}
+            .msg{z-index: 2; color:#ffffff; height: 60px;width: 60px;border-radius: 50%;;position: fixed;right:20px;bottom:20px;padding-top: 12px;box-sizing:border-box;}
+            .comment{z-index: 2;background-color: #ffffff; width:350px;height: fit-content;position: fixed;right:20px;bottom: 100px; box-shadow: 2px 2px 0px 0px #dd6ddd;}
+            .comment form{margin:10px;padding:10px;width: inherit;}
+            .comment input,.comment textarea,.comment button{width:250px;border:solid #e6e6e6;margin:4px;height:30px;border-radius: 10px;}
+            .comment textarea{height: 60px;}   .maincol,.form button{background-color: #2fb12f} 
+            .heading{color: #ffffff;padding: 8px;} 
+            .pwr{width: 100%;text-align: center;}
+            .power{border: none;width:fit-content; text-align: center;border-radius: 4px;}
+            .power:hover{background-color: #b2bdb2f8;}       
+            
+            .form{width: min-content;padding: 5px;border:1px solid #d4c5c5;margin:15px 0px 0px 30px}
+            .vr{width:2px;height: 115%;background-color: #b7c5c2;position: absolute;left: 50%;}            
+            .dot{ background-color: #55bd78; height: 20px;width: 20px;border-radius: 50%;border:3px solid #ffffff;position: absolute;top:45%;}           
+            .centeral{text-align: center;}
+            .download{display: none;}
+            .hid{display: none;}
+            .ads{position: relative;display: inline-block;padding: 8px 4px 8px 10px;;border-radius: 10px;}
+            .ads h1{ font-weight: normal;font-size: 22px;}
+            .adcontright{float: right;width: 50.5%;position: relative;}
+            .adcontleft{width: 50.7%;float: left;;position: relative;} 
+            .adright{width:90%; float: right;box-shadow: 0px 1px 5px 0px #d4c5c5}
+            .adleft{width:90%; box-shadow: 0px 1px 5px 0px #d4c5c5}
+            .adright::after {
+                content: "";position: absolute;top: 50%;right: 100%;margin-top: -5px;border-width: 5px;border-style: solid;;
+                } 
+            
+            .ad1{background-color: #18a7e0;}.ad1::after{border-color: transparent #18a7e0 transparent transparent}
+            .ad2{background-color: #55bd78;}.ad2::after{border-color: transparent transparent transparent#55bd78 }
+            .ad3{background-color: #ffffff;}.ad3::after{border-color: transparent #ffffff transparent transparent}
+            .ad4{background-color: #9cca51;}.ad4::after{border-color: transparent transparent transparent#9cca51 }
+            .ad5{background-color: #3ddab8;}.ad5::after{border-color: transparent #3ddab8 transparent transparent}
+            .mobSpan{display: none;}
+            .images img{width: 45%;height: auto;} .images img:last-child{float: right;}
+            footer{background-color: #057960;width: 100%;padding-left: 15px;color: #ffffff;position: relative;}
+            footer div{float:left;width: 33%;} footer div div{float: none;width: fit-content;}
+            footer div h1{font-weight: normal; font-size:23px;}
+            footer div a{display: block;text-decoration: none;color: #ffffff;font-size: 20px;padding: 8px 8px}
+            footer .social{width: max-content;}
+            footer .social a{float: left;font-size: 25px;}
+            .bot{position:absolute;bottom: 0px;left:45%; font-family: verdana;}
+            .cont a,.cont p{ font-size: 15px; padding: unset;} .cont a:hover{color: #0000ff;}
+            .tel{font:normal;font-style: normal;text-decoration:underline;color:#0000ff;font-size: 15px;padding: unset;display: unset;}
+            @media(min-width:640px){
+                .adleft::after {
+                content: "";position: absolute;top: 50%;left: 100%;margin-top: -5px;border-width: 5px;border-style: solid;
+            }   
+            .adcontleft .dot{right:0px}          
+            }
+            footer{height:60%} 
+            @media (max-width:640px) {
+
+                .nav,.bec,.dwn{display: none;}.mobnav,.download{display: block;} 
+                .content,.body{width: 90%;}.body *{font-size: 15px;}
+                .slide{position: unset;}
+                .vr{left:0%;height:125%} .ads{width: 80%;} .adright,.adleft{float: inline-end;} 
+                .images img{width: 100%;height: auto;}   .images img:last-child{float: unset;}  
+                footer{height:100%}     
+                footer div{position: relative;width: 100%;height: fit-content;}footer div a,p{font-size: 15px;padding: 12px;} footer .cont{float:left;}
+                .adcontright,.adcontleft{width: 100%;margin-right: 10px;float: right;} .adcontleft .dot{background-color:#55bd78;}
+                .adleft{float: right;}
+                .ad2::after{border-color: transparent #55bd78 transparent transparent}
+                .ad4::after{border-color: transparent #9cca51 transparent transparent}
+                .adleft::after {
+                content: "";position: absolute;top: 50%;right: 100%;margin-top: -5px;border-width: 5px;border-style: solid;
+            }             
+               .mobSpan{display: block;}
+                
+            }
+
+        </style>
+    </head>
+    <body><div class="nav maincol">
+         <img src="Images/zalishaLogo.jpg"> <div class="nspan"> Zalisha</div>
+        <div class="list">
+        <a href="#"><i class=" fas fa-user"></i> FARMERS</a>
+        <a href="#"><i class="fas fa-store"></i>BUSINESSES</a>
+        <a href="#"><i class="fas fa-shopping-cart"></i> MARKETPLACE</a>
+    </div>
+    </div>
+    <div class="mobnav maincol">
+        <img src="Images/zalishaLogo.jpg"> Zalisha
+        <div class="menu"><i class="fas fa-bars"></i>
+            <div class="dropdown"><a href="#"><i class="fas fa-home"></i>HOME</a><a href="#"><i class="fas fa-store"></i>BUSINESSES</a><a href="#"><i class="fas fa-home"></i>   MARKETPLACE</a>           
+           </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="body">
+        <div class="bec">
+            <h3 >BECOME A DIGITAL FARMER</h3>
+            <h1 class="join">Join the fastest growing digital farming platform</h1>
+            <p>Why struggle to <b>access information, markets , finance</b> or do <b>record keeping</b> in your farm? With <b>zalisha</b> we give you the platform you need to enable your growth <br>
+            
+            <a href="#"><button class="maincol"><b>JOIN NOW</b></button></a></p>
+        </div>
+        <div class="slide">
+            <img src="Images/zalisha1.jpg" class="imgslides">
+            <img src="Images/zalisha2.jpg" class="imgslides">
+            <img src="Images/zalisha3.jpg" class="imgslides">
+            <img src="Images/zalisha4.jpg" class="imgslides">
+        </div>
+        <div title="maximise" class="msg maincol centeral" onclick="Max()"><i class="far fa-comment fa-2x"></i></div>
+        <div title="minimise"class="msg maincol centeral hid" id="hid" onclick="Min()"><i class="fas fa-times fa-2x"></i></div>
+
+        <div class="comment hid" id="hidden">
+            <div class="maincol heading"><p>Send message</p>
+                <p class="centeral">Dear Customer Please fill out the form below and we will get back to you as soon as possible.</p></div>
+            <div class="form">
+            <form>
+                <input placeholder="*Name">
+                <input placeholder="*Email">
+                <textarea placeholder="*Message"></textarea>
+                <button class="maincol" type="submit" >Submit</button>
+            </form></div><br>
+            <div class="pwr"><span class="power">We're <i style="color: #ffe600;" class="fas fa-bolt"> </i>by tawk.to</span> </div>
+        </div>
+        <br><div class="download centeral"><button class="maincol"><i class="fab fa-google-play"></i> DOWNLOAD</button></div>
+        <div class="enb">
+            <h1 >Enabling small scale farmers</h1>
+
+We walk you the journey to achieve success in agriculture as a farmer
+by providing what you need at the right moment through zalisha<br>
+<button class="maincol dwn"><i class="fab fa-google-play"></i>DOWNLOAD ZALISHA</button><br><br>
+        </div>
+        <div style="position: relative;height: fit-content;">
+        <div class="vr"></div>
+            <div class="adcontright"> <div class="dot"></div>   
+        <div class="ads adright ad1"> <h1>Financial services</h1>
+        We offer credit scoring services to our farmers to enable them access financial services</div> 
+        </div><br><br><br><br><br><br><span class="mobSpan"><br><br><br></span>
+        <div class="adcontleft"><div class="dot"></div> 
+        <div class="ads adleft ad2"><h1>Precision farming</h1>
+        access agronomy and weather information depending on your geolocation usin IoT solutions on your phone
+        </div></div><br><br><br><br><br><span class="mobSpan"><br><br><br><br><br></span>
+        <div class="adcontright"><div class="dot"></div> 
+        <div class="ads adright ad3"><h1>Get market access</h1>
+        do on farm record keeping, realtime and efficiently on zalisha,bloth for individual and co-operatives
+        </div></div><br><br><br><br><br><br><br><span class="mobSpan"><br><br><br></span>
+        <div class="adcontleft"><div class="dot"></div> 
+        <div class="ads adleft ad4"><h1>contract farming</h1>
+        we enable contract farming through our interlinked solutions
+        </div></div><br><br><br><br><br><span class="mobSpan"><br><br><br></span>
+        <div class="adcontright"><div class="dot"></div> 
+        <div class="ads adright ad5"><h1>Do record keeping</h1>
+        We enable proper and automated record keeping using IoT solutions
+        </div></div>
+        </div><br><br><br><br><br>
+        <div class="enb"><h1>Zalisha for business</h1>
+        <p>We provide a platform for farming companies, aggregators, farm input <br>providers<br>
+            and farmer cooperatives manage their activities and operations through<br> zalisha
+        </p><br><button class="maincol" id="req">Request Zalisha for Business</button>
+   
+    </div><br><br><br>
+      <div class="images"><img src="Images/zalishaapp.jpg"><img src="Images/dehorn.jpg"></div><br><br><br> <br><br><br> 
+    </div><footer>
+        <div><div>
+            <h3>ZALISHA</h3>
+            <a href="#">Farmers Platform</a>
+            <a href="#">Zalisha for Business</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Privacy</a>
+            <a href="#">Farmers Platform</a>
+        </div></div><br>
+        <div><div>
+            <h3>COMPANY</h3>
+            <a href="#">About</a>
+            <a href="#">Get in touch</a>
+            <a href="#">Media</a>            
+            <a href="#">Privacy &terms</a>
+        </div></div><br><br>
+        <div><div class="cont">
+            <h3>CONTACTS</h3>
+            <h1>Mail</h1>
+            <i class="left far fa-envelope fa-3x" style="padding-right: 8px;"></i>
+             <p class="right"><a href="mailto:info@zalishaafrica.com">info@zalishaafrica.com</a> <br>
+                <a href="mailto:engineering@fineteklabs.com">engineering@fineteklabs.com</a></p><br><br><br><br>
+            <hr>
+            <h1>Telephone</h1>
+            <i class=" left fas fa-phone fa-3x" style="padding-right: 8px;"></i>
+            <p class="right">Telephone1:<a class="tel"href="tel: 0734-341-962">+254 734 341 962</a><br>
+                Telephone2:<a class="tel"href="tel: 0706-079-706">+254 706 059 706</a>
+            </p>
+
+        </div></div>
+        <div class="social"><h3>SOCIAL</h3>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+             <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="bot centeral">2021-Finetek Technologies</p>
+    </footer></div>
+    
+
+    
+    <script>
+        Req();
+        function Req(){
+        if(screen.width<640){
+            document.getElementById("req").innerHTML="Zalisha for Business"
+        }
+        else{
+            document.getElementById("req").innerHTML=" Request Zalisha for Business"
+        }
+        setTimeout(Req,0.5)}
+        var slideIndex = 0;
+showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("imgslides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            slides[i].classList.remove("anim")  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}  
+        slides[slideIndex-1].style.display = "block";  
+        slides[slideIndex-1].className+=" anim "
+        setTimeout(showSlides, 3500); 
+    }
+   
+    function Max(){
+        document.getElementById("hid").style.display="block"; 
+        document.getElementById("hidden").style.display="block"       
+    }
+    function Min(){
+        document.getElementById("hid").style.display="none"; 
+        document.getElementById("hidden").style.display="none"
+    }
+    </script>
+    </body>
+</html>
